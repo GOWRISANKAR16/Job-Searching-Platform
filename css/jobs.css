@@ -1,0 +1,381 @@
+/**
+ * Job cards, filter bar, modal. Design system compliant.
+ */
+
+/* ——— Filter bar ——— */
+.ds-filter-bar {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--card-border);
+  background: var(--color-bg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: flex-end;
+}
+
+.ds-filter-bar__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ds-filter-bar__label {
+  font-size: var(--text-size-caption);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.ds-filter-bar .ds-input,
+.ds-filter-bar select.ds-input {
+  min-width: 120px;
+}
+
+.ds-filter-bar select.ds-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234A4946' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-2) center;
+  padding-right: var(--space-4);
+}
+
+.ds-filter-bar__group--toggle {
+  min-width: 220px;
+}
+
+.ds-filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+}
+
+.ds-filter-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.ds-filter-toggle__label {
+  cursor: pointer;
+}
+
+/* ——— Job grid ——— */
+.ds-jobs-wrap {
+  padding: var(--space-4);
+}
+
+.ds-jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-3);
+}
+
+/* ——— Job card ——— */
+.ds-job-card {
+  background: var(--color-bg);
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: border-color var(--layout-transition);
+}
+
+.ds-job-card:hover {
+  border-color: #C5C3BE;
+}
+
+.ds-job-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h3);
+  font-weight: 600;
+  margin: 0 0 var(--space-1) 0;
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.ds-job-card__company {
+  font-size: var(--text-size-body-small);
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.ds-job-card__meta {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: var(--line-height-body);
+}
+
+.ds-job-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.ds-job-card__source {
+  font-size: var(--text-size-caption);
+  padding: var(--space-1) var(--space-2);
+  border: var(--input-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  margin-right: auto;
+}
+
+.ds-job-card__match {
+  font-size: var(--text-size-caption);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--layout-radius);
+  border: var(--input-border);
+}
+
+.ds-job-card__match--high {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.ds-job-card__match--medium {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.ds-job-card__match--low {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.ds-job-card__match--below {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.ds-job-card__posted {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+}
+
+.ds-job-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.ds-job-card__actions .ds-btn {
+  flex: 1;
+  min-width: 80px;
+}
+
+/* ——— Job card status ——— */
+.ds-job-card__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.ds-job-card__status-label {
+  font-size: var(--text-size-caption);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.ds-job-card__status .ds-input {
+  min-width: 0;
+  width: auto;
+  max-width: 140px;
+}
+
+.ds-job-card__status-badge {
+  font-size: var(--text-size-caption);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--layout-radius);
+  border: 1px solid var(--color-border);
+}
+
+.ds-job-card__status-badge--neutral {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.ds-job-card__status-badge--applied {
+  color: #2c5282;
+  border-color: #2c5282;
+}
+
+.ds-job-card__status-badge--rejected {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.ds-job-card__status-badge--selected {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+/* ——— No results ——— */
+.ds-jobs-empty {
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  max-width: var(--text-max-width);
+  margin: 0 auto;
+}
+
+.ds-jobs-empty__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h2);
+  font-weight: 600;
+  margin: 0 0 var(--space-1) 0;
+  color: var(--color-text);
+}
+
+.ds-jobs-empty__message {
+  font-size: var(--text-size-body);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ——— Modal ——— */
+.ds-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: var(--space-4);
+  transition: opacity var(--layout-transition);
+}
+
+.ds-modal-overlay[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ds-modal {
+  background: var(--color-bg);
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: var(--space-4);
+}
+
+.ds-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--card-border);
+}
+
+.ds-modal__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h2);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.ds-modal__close {
+  flex-shrink: 0;
+  padding: var(--space-1);
+  border: var(--input-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: var(--text-size-body);
+  line-height: 1;
+  transition: border-color var(--layout-transition);
+}
+
+.ds-modal__close:hover {
+  border-color: var(--color-text-muted);
+}
+
+.ds-modal__body {
+  font-size: var(--text-size-body-small);
+  line-height: var(--line-height-loose);
+  color: var(--color-text);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.ds-modal__skills {
+  margin: 0;
+}
+
+.ds-modal__skills-title {
+  font-size: var(--text-size-caption);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-1) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ds-modal__skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ds-modal__skills-list li {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-size-caption);
+  border: var(--input-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.ds-modal__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: var(--card-border);
+}
+
+/* ——— Preferences banner ——— */
+.ds-jobs-banner {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--card-border);
+  background: var(--color-bg);
+  font-size: var(--text-size-body-small);
+  color: var(--color-text-muted);
+}
+
+/* ——— Toast ——— */
+.ds-toast {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-size-body-small);
+  color: var(--color-text);
+  background: #ffffff;
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  box-shadow: 0 2px 8px rgba(17, 17, 17, 0.08);
+  z-index: 200;
+  max-width: 320px;
+  transition: opacity var(--layout-transition);
+}

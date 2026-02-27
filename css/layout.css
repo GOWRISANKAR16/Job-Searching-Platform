@@ -1,0 +1,134 @@
+/**
+ * Global layout structure
+ * [Top Bar] → [Context Header] → [Workspace 70% | Panel 30%] → [Proof Footer]
+ */
+
+/* ——— App shell ——— */
+.ds-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ——— Top Bar ——— */
+.ds-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  border-bottom: var(--card-border);
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.ds-top-bar__brand {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h3);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.ds-top-bar__progress {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+}
+
+.ds-top-bar__status {
+  /* Badge lives here; see components */
+}
+
+/* ——— Main content (route shell) ——— */
+.ds-main-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--color-bg);
+}
+
+/* ——— Context Header ——— */
+.ds-context-header {
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  border-bottom: var(--card-border);
+  background: var(--color-bg);
+}
+
+.ds-context-header__headline {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-display);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-1) 0;
+  max-width: var(--text-max-width);
+}
+
+.ds-context-header__subtext {
+  font-size: var(--text-size-body);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: var(--text-max-width);
+}
+
+/* ——— Main content area (workspace + panel) ——— */
+.ds-main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.ds-workspace {
+  width: var(--layout-workspace-ratio);
+  padding: var(--space-4);
+  overflow-y: auto;
+  border-right: var(--card-border);
+}
+
+.ds-panel {
+  width: var(--layout-panel-ratio);
+  padding: var(--space-4);
+  overflow-y: auto;
+  background: var(--color-bg);
+}
+
+/* ——— Proof Footer ——— */
+.ds-proof-footer {
+  padding: var(--space-3) var(--space-4);
+  border-top: var(--card-border);
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.ds-proof-footer__title {
+  font-size: var(--text-size-caption);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ds-proof-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.ds-proof-footer__item {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.ds-proof-footer__item::before {
+  content: "□";
+  font-size: 1.1em;
+  color: var(--color-text);
+}
+
+.ds-proof-footer__item.ds-proof-footer__item--done::before {
+  content: "☑";
+  color: var(--color-success);
+}

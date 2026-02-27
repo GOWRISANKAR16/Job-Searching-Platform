@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print: hide nav and UI, show only resume with clean B&W styling */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-area {
+    background: #fff !important;
+    color: #000 !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .print-area * {
+    color: #000 !important;
+    border-color: #000 !important;
+    background: transparent !important;
+  }
+
+  .print-area a {
+    color: #000 !important;
+  }
+
+  /* Avoid splitting project/experience bullets across pages */
+  .print-area .print-keep-together {
+    page-break-inside: avoid;
+  }
+
+  /* Consistent spacing and no cut-off */
+  .print-area section {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    size: A4;
+    margin: 1.2cm;
+  }
+}

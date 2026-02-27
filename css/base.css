@@ -1,0 +1,103 @@
+/**
+ * Base styles & typography
+ * Clean reset, intentional type scale, max width for readability.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-size-body);
+  line-height: var(--line-height-body);
+  min-height: 100vh;
+}
+
+/* ——— Typography ——— */
+h1, .ds-heading-1 {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-display);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-2) 0;
+  max-width: var(--text-max-width);
+}
+
+h2, .ds-heading-2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h2);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-2) 0;
+  max-width: var(--text-max-width);
+}
+
+h3, .ds-heading-3 {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h3);
+  font-weight: 600;
+  line-height: var(--line-height-body);
+  margin: 0 0 var(--space-1) 0;
+}
+
+p, .ds-body {
+  margin: 0 0 var(--space-2) 0;
+  max-width: var(--text-max-width);
+  line-height: var(--line-height-loose);
+}
+
+p:last-child, .ds-body:last-child {
+  margin-bottom: 0;
+}
+
+.ds-subtext, .ds-context-subline {
+  font-size: var(--text-size-body-small);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+  margin: 0;
+  max-width: var(--text-max-width);
+}
+
+.ds-caption {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+/* ——— Links ——— */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--layout-transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ——— Focus (keyboard) ——— */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}

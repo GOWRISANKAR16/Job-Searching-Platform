@@ -1,0 +1,249 @@
+/**
+ * Reusable components
+ * Same radius, subtle borders, no drop shadows. Transitions 150–200ms ease-in-out.
+ */
+
+/* ——— Status badge (Top Bar right) ——— */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-size-caption);
+  font-weight: 500;
+  border-radius: var(--layout-radius);
+  border: var(--input-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.ds-badge--not-started {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.ds-badge--in-progress {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.ds-badge--shipped {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+/* ——— Buttons ——— */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-size-body-small);
+  font-weight: 500;
+  line-height: 1.2;
+  border-radius: var(--button-radius);
+  border: var(--input-border);
+  cursor: pointer;
+  transition: background-color var(--layout-transition), border-color var(--layout-transition), color var(--layout-transition);
+}
+
+.ds-btn:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.ds-btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.ds-btn--primary:hover {
+  background: #6E0000;
+  border-color: #6E0000;
+}
+
+.ds-btn--secondary {
+  background: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.ds-btn--secondary:hover {
+  background: rgba(17, 17, 17, 0.06);
+}
+
+/* ——— Inputs ——— */
+.ds-input {
+  width: 100%;
+  padding: var(--space-2) var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: var(--input-border);
+  border-radius: var(--layout-radius);
+  transition: border-color var(--layout-transition);
+}
+
+.ds-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.ds-input:hover {
+  border-color: #C5C3BE;
+}
+
+.ds-input:focus {
+  border: var(--input-border-focus);
+  outline: none;
+}
+
+.ds-input--error {
+  border-color: var(--color-accent);
+}
+
+.ds-input-label {
+  display: block;
+  font-size: var(--text-size-caption);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.ds-input-hint {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.ds-input-message--error {
+  font-size: var(--text-size-caption);
+  color: var(--color-accent);
+  margin-top: var(--space-1);
+}
+
+/* ——— Cards ——— */
+.ds-card {
+  background: var(--color-bg);
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  padding: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.ds-card:last-child {
+  margin-bottom: 0;
+}
+
+.ds-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h3);
+  font-weight: 600;
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* ——— Copyable prompt box (Secondary Panel) ——— */
+.ds-copy-box {
+  padding: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-size-caption);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  margin-bottom: var(--space-2);
+  position: relative;
+}
+
+.ds-copy-box__content {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ds-copy-box__btn {
+  margin-top: var(--space-2);
+}
+
+.ds-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+/* ——— Step explanation (Panel) ——— */
+.ds-step-title {
+  font-size: var(--text-size-caption);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.ds-step-body {
+  font-size: var(--text-size-body-small);
+  color: var(--color-text);
+  line-height: var(--line-height-loose);
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* ——— Error state ——— */
+.ds-error-block {
+  padding: var(--space-3);
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  border-left: 4px solid var(--color-accent);
+  background: var(--color-bg);
+}
+
+.ds-error-block__title {
+  font-weight: 600;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.ds-error-block__message {
+  font-size: var(--text-size-body-small);
+  color: var(--color-text);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.ds-error-block__fix {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ——— Empty state ——— */
+.ds-empty-state {
+  padding: var(--space-5);
+  text-align: center;
+  border: var(--card-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-bg);
+}
+
+.ds-empty-state__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-size-h2);
+  font-weight: 600;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.ds-empty-state__message {
+  font-size: var(--text-size-body);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+  max-width: var(--text-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ds-empty-state__action {
+  margin-top: var(--space-2);
+}

@@ -1,0 +1,12 @@
+/**
+ * Job Notification App — Design System
+ * Single entry point. Load this file after variables.
+ */
+
+@import "variables.css";
+@import "base.css";
+@import "layout.css";
+@import "nav.css";
+@import "routes.css";
+@import "jobs.css";
+@import "components.css";
